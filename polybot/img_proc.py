@@ -53,7 +53,7 @@ class Img:
 
     def rotate(self):
         # TODO remove the `raise` below, and write your implementation
-        raise NotImplementedError()
+        pass
 
     def salt_n_pepper(self):
         # TODO remove the `raise` below, and write your implementation
@@ -69,8 +69,8 @@ class Img:
 
     def concat(self, other_img, direction='horizontal'):
         # TODO remove the `raise` below, and write your implementation
-        raise NotImplementedError()
+        pass
 
     def segment(self):
         # TODO remove the `raise` below, and write your implementation
-        raise NotImplementedError()
+        pass
