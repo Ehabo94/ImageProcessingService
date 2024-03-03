@@ -67,7 +67,6 @@ class Bot:
             self.send_text(msg['chat']['id'], f'Your original message: {msg["text"]}')
         else:
             img_path = self.download_user_photo(msg)
-            # logger.info(f'img_path is {img_path}')
             new_path = ""
             if "caption" in msg:
                 if msg["caption"] == "blur":
@@ -90,7 +89,7 @@ class Bot:
                     new_img.salt_n_pepper()
                     new_path = new_img.save_img()
                     self.send_photo(msg["chat"]["id"], new_path)
-                    self.send_text(msg['chat']['id'], "salt and pepper filter applied")
+                    self.send_text(msg['chat']['id'], "mix filter applied")
                 elif msg["caption"] == "mix":
                     self.send_text(msg['chat']['id'], "mix filter in progress")
                     new_img = Img(img_path)
