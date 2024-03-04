@@ -102,8 +102,8 @@ class Bot:
                     self.send_photo(msg["chat"]["id"], new_path)
                     self.send_text(msg['chat']['id'], "mix filter applied")
 
-            os.remove(img_path)  # cleaning
-            os.remove(new_path)  # cleaning
+            #os.remove(img_path)  # cleaning
+            #os.remove(new_path)  # cleaning
 
 
 class QuoteBot(Bot):

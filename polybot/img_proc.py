@@ -51,10 +51,6 @@ class Img:
 
             self.data[i] = res
 
-    def rotate(self):
-        # TODO remove the `raise` below, and write your implementation
-        pass
-
     def salt_n_pepper(self):
         # TODO remove the `raise` below, and write your implementation
         rows = len(self.data)
@@ -66,11 +62,3 @@ class Img:
                     self.data[i][j] = 255
                 elif ran_num > 0.8:
                     self.data[i][j] = 0
-
-    def concat(self, other_img, direction='horizontal'):
-        # TODO remove the `raise` below, and write your implementation
-        pass
-
-    def segment(self):
-        # TODO remove the `raise` below, and write your implementation
-        pass
