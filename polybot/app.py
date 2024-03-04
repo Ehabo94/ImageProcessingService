@@ -1,4 +1,5 @@
 import flask
+import requests.exceptions
 from flask import request
 import os
 from bot import Bot, QuoteBot, ImageProcessingBot
@@ -16,12 +17,15 @@ def index():
 
 @app.route(f'/{TELEGRAM_TOKEN}/', methods=['POST'])
 def webhook():
-    req = request.get_json()
-    print(req['message'])
-    bot.handle_message(req['message'])  # in case of stuck need to comment this line
-    return 'Ok'
+    try:
+        req = request.get_json()
+        print(req['message'])
+        bot.handle_message(req['message']) # in case of stuck need to comment this line
+        return 'Ok'
+    except requests.exceptions.RequestException as e:
+        print(e)
 
 
 if __name__ == "__main__":
-    bot = Bot(TELEGRAM_TOKEN, TELEGRAM_APP_URL)
+    bot = ImageProcessingBot(TELEGRAM_TOKEN, TELEGRAM_APP_URL)
     app.run(host='0.0.0.0', port=8443)
