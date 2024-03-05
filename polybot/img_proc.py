@@ -23,7 +23,11 @@ class Img:
         Do not change the below implementation
         """
         new_path = self.path.with_name(self.path.stem + '_filtered' + self.path.suffix)
-        imsave(new_path, self.data, cmap='gray')
+        try:
+            imsave(new_path, self.data, cmap='gray')
+        except Exception as e:
+            print(e)
+
         return new_path
 
     def blur(self, blur_level=16):

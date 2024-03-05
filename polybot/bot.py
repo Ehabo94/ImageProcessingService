@@ -106,10 +106,6 @@ class ImageProcessingBot(Bot):
                     try:
                         new_img.contour()
                         new_path = new_img.save_img()
-                    except PermissionError as e:
-                        print(e)
-                    except IOError as e:
-                        print(e)
                     except Exception as e:
                         print(e)
 
