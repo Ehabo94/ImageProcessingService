@@ -17,13 +17,10 @@ def index():
 
 @app.route(f'/{TELEGRAM_TOKEN}/', methods=['POST'])
 def webhook():
-    try:
-        req = request.get_json()
-        print(req['message'])
-        bot.handle_message(req['message']) # in case of stuck need to comment this line
-        return 'Ok'
-    except requests.exceptions.RequestException as e:
-        print(e)
+    req = request.get_json()
+    print(req['message'])
+    bot.handle_message(req['message'])  # in case of stuck need to comment this line
+    return 'Ok'
 
 
 if __name__ == "__main__":
